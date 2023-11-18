@@ -3,7 +3,7 @@
 
 def guardar_variable(variable1,variable2):# Guardar la variable en un archivo
     with open("borrador.txt", "w") as archivo:
-        archivo.write(str(variable1)+","+variable2)
+        archivo.write(str(variable1)+","+variable2)#Hay que separa las variables cuando se guarden [","]
 
 
 def recuperar_variable():# Recuperar la variable del archivo
@@ -46,8 +46,8 @@ def menu_principal():#menu principal
 
     #Recuperamos datos de la última vez que ejecutamos el programa
     contenido_borrador_txt=recuperar_variable()
-    numero_de_ataque=contenido_borrador_txt[0]
-    tipo_de_ataque=contenido_borrador_txt[1]
+    numero_de_ataque=contenido_borrador_txt[1]
+    tipo_de_ataque=contenido_borrador_txt[0]
     
     #Mostramos los últimos movimientos que se hicieron
     print(f"Last hit --> type of attack:{tipo_de_ataque}  number of the attack:{numero_de_ataque}")
@@ -58,11 +58,12 @@ def menu_principal():#menu principal
     print("-->[$] Select last hit")
     print()
     select_option=input("select: ")
+    print()
     if(select_option=="$"):
-        print("ja")#Esta aun en construcción
+        if(tipo_de_ataque=="sql_inyection"):
+            import sql_inyection
+            sql_inyection.content_sql_injection(numero_de_ataque)                
     elif(select_option == "1"):
         import sql_inyection
-        sql_inyection.sql_injection_menu()
-        tipo_de_ataque="sql injection"
+        sql_inyection.sql_injection_menu()        
 
-    guardar_variable(tipo_de_ataque,numero_de_ataque)
