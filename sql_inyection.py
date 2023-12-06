@@ -29,17 +29,17 @@ def menu_interno(numero_seleccion):#Menu para la seleccion despues de cada ataqu
         print()
 
 def content_sql_injection(numero_seleccion):#Contenido de sql injection
-    if(numero_seleccion=="0"):
+    if(numero_seleccion=="c" or numero_seleccion=="C"):
         print("**********************************************************************************")
         print("CONCEPTS: ")
         print("ESTRCUTURA: |DataBase--> Tables--> Columns--> Data|")
         print("**********************************************************************************")
-    elif(numero_seleccion=="1"):
+    elif(numero_seleccion=="d" or numero_seleccion=="D"):
         print("**********************************************************************************")
         print("DICTIONARY: ")
         print("Satanizada: Código a la cuál se desarrollo para que no se hagan ataques sql injection")
         print("**********************************************************************************")
-    elif(numero_seleccion=="2"):
+    elif(numero_seleccion=="1"):
         print("**********************************************************************************")
         print("#1: VULNERABILIDAD SQL INJECTION EN LA CLÁUSULA WHERE PARA PERMITIR LA RECUPERACIÓN DE DATOS ESCONDIDOS")
         print()
@@ -53,7 +53,7 @@ def content_sql_injection(numero_seleccion):#Contenido de sql injection
         print("[-- -]: para comentar la query faltante que quedo de la original. ")
         print("**********************************************************************************")
         print()
-    elif(numero_seleccion=="3"):
+    elif(numero_seleccion=="2"):
         print("**********************************************************************************")
         print("#2: VULNERABILIDAD SQL INJECTION QUE PERMITE EVITAR LOGUEARSE")
         print()
@@ -67,7 +67,7 @@ def content_sql_injection(numero_seleccion):#Contenido de sql injection
         print("[--]: Para comentar las demás partes.")
         print("**********************************************************************************")
         print()
-    elif(numero_seleccion=="4"):
+    elif(numero_seleccion=="3"):
         print("**********************************************************************************")
         print("#3: Know columns")
         print()
@@ -87,7 +87,7 @@ def content_sql_injection(numero_seleccion):#Contenido de sql injection
         print("[UNION]: Unir una consulta.")
         print("**********************************************************************************")
         print()
-    elif(numero_seleccion=="5"):
+    elif(numero_seleccion=="4"):
         print("**********************************************************************************")
         print("#4:find a column that is a string")
         print()
@@ -97,7 +97,7 @@ def content_sql_injection(numero_seleccion):#Contenido de sql injection
         print("--------------------------------------------------------------------------")
         print("**********************************************************************************")
         print()
-    elif(numero_seleccion=="6"):
+    elif(numero_seleccion=="5"):
         print("**********************************************************************************")
         print("#5: UNION attack recover data from another table")
         print()
@@ -117,7 +117,7 @@ def content_sql_injection(numero_seleccion):#Contenido de sql injection
         print("         Step #6.1.3: Para mysql: 'column_A' 'Column_B' [Tenga en cuenta el espacio entre los dos strings] CONCAT('column_a','column_b')")
         print("**********************************************************************************")
         print()
-    elif(numero_seleccion=="7"):
+    elif(numero_seleccion=="6"):
         print("**********************************************************************************")
         print("#6: Know the version of the oracle")
         print()
@@ -135,7 +135,7 @@ def content_sql_injection(numero_seleccion):#Contenido de sql injection
         print("[--]: Para comentar las demás partes.")
         print("**********************************************************************************")
         print()
-    elif(numero_seleccion=="8"):
+    elif(numero_seleccion=="7"):
         print("**********************************************************************************")
         print("#7: get the version and database in mysql and microsoft")
         print()
@@ -149,7 +149,7 @@ def content_sql_injection(numero_seleccion):#Contenido de sql injection
         print("[@version]: Ver version de la base de datos en microsoft como para mysql.")
         print("[--]: Para comentar las demás partes.")
         print("**********************************************************************************")
-    elif(numero_seleccion=="9"):
+    elif(numero_seleccion=="8"):
         print("**********************************************************************************")
         print("#8: Sql injection attack that is different from oracle")
         print()
@@ -170,7 +170,7 @@ def content_sql_injection(numero_seleccion):#Contenido de sql injection
         print("[--]: Para comentar las demás partes.")
         print("[column1||':'||column2]:Tuberias que concatenan dos columnas")
         print("**********************************************************************************")
-    elif(numero_seleccion=="10"):
+    elif(numero_seleccion=="9"):
         print("**********************************************************************************")
         print("#9: Sql injection in oracle")
         print()
@@ -191,7 +191,7 @@ def content_sql_injection(numero_seleccion):#Contenido de sql injection
         print("[--]: Para comentar las demás partes.")
         print("[owner]:Propetarios.")
         print("**********************************************************************************")
-    elif(numero_seleccion=="11"):
+    elif(numero_seleccion=="10"):
         print("**********************************************************************************")        
         print("#10: Blind sql injection with conditional responses")
         print()
@@ -223,17 +223,17 @@ def sql_injection_menu():#Menu interactivo del ataque de sql inyections
     print("         SQL inyection           ")
     print("             HITS                ")
     print("█████████████████████████████████")
-    print("HIT #0: CONCEPTOS")
-    print("HIT #1: DICCIONARIO")
-    print("FIRST HIT #2: VULNERABILIDAD SQL INJECTION EN LA CLÁUSULA WHERE PARA PERMITIR LA RECUPERACIÓN DE DATOS ESCONDIDOS")
-    print("SECOND HIT #3: The beginning of section without knowing data and attacking from the user")
-    print("THIRD HIT #4: Know columns")
-    print("FOURTH HIT #5: find a column that is a string")
-    print("FIFTH HIT #6: UNION attack recover data from another table")
-    print("SIXTH HIT #7: Know the version of the oracle")
-    print("SEVENTH HIT #8: get the version and database in mysql and microsoft")
-    print("EIGHTH HIT #9: Sql injection attack that is different from oracle")
-    print("NINTH HIT #10: Sql injection in oracle")
+    print("OPTION [C]: CONCEPTOS")
+    print("OPTION [D]: DICCIONARIO")
+    print("HIT #1: VULNERABILIDAD SQL INJECTION EN LA CLÁUSULA WHERE PARA PERMITIR LA RECUPERACIÓN DE DATOS ESCONDIDOS")
+    print("HIT #2: VULNERABILIDAD SQL INJECTION QUE PERMITE EVITAR LOGUEARSE")
+    print("HIT #3: Know columns")
+    print("HIT #4: find a column that is a string")
+    print("HIT #5: UNION attack recover data from another table")
+    print("HIT #6: Know the version of the oracle")
+    print("HIT #7: get the version and database in mysql and microsoft")
+    print("HIT #8: Sql injection attack that is different from oracle")
+    print("HIT #9: Sql injection in oracle")
     print("█████████████████████████████████")
     numero_seleccion=input("select number of the attack: ")
     print()
