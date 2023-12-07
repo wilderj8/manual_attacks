@@ -40,6 +40,8 @@ def content_sql_injection(numero_seleccion):#Contenido de sql injection
         print("Sanatizada: Código a la cuál se desarrollo para que no se hagan ataques sql injection")
         print("Dumpear: Extraer información.")
         print("bypass or bypassing: Es evitar la autenticación")
+        print("Cluster van: ")
+
 
         print("**********************************************************************************")
 
@@ -265,13 +267,25 @@ def content_sql_injection(numero_seleccion):#Contenido de sql injection
         print(" Step #5.2: Mandamos la petición al repeater (Ctrl+R).")
         print(" Step #5.3: A la pestaña de response vamos a modificarlo a render para que me muestre la página tal cuál como se ve en los navegadores.")
         print(" Step #5.4: Nos fijamos en la cookie que vamos a vulnerar.")
-
-
+        print(" Step #5.5: Añadimos un hueco al valor de la cookie--> COOKIE: cookie_de_la_pagina_1[']")
+        print(" result #1: Debe desaparecer algo de la página, puede ser muy pequeña.")
+        print(" Step #5.6: Añadimos un hueco y ponemos las partes para comentar al valor de la cookie--> COOKIE: cookie_de_la_pagina_1[' -- -]")
+        print(" result #1: Debe aparecer el elemento que se nos perdio anteriormente.")
+        print(" Step #5.7: Utilizamos un ataque origen al valor de la cookie--> COOKIE: cookie_de_la_pagina_1['AND 1=1 -- -]")
+        print(" result #1: Debe aparecer el elemento que se nos perdio anteriormente o debe seguir apareciendo este elemento.")
+        print(" Step #5.8: Utilizamos un ataque origen al valor pero de una forma que me salga un False de la cookie--> COOKIE: cookie_de_la_pagina_1['AND 2=1 -- -]")
+        print(" result #1: Esto me debe desaparecer el elemento clave.")
+        print(" Step #5.9: Verificamos si hay un usuario llamado administrator--> COOKIE: cookie_de_la_pagina_1['AND (SELECT 'a' FROM nombre_de_la_tabla where columna_1 ='administrator')='a -- -]")
+        print(" Form #1: Usar la función substring() --> COOKIE: cookie_de_la_pagina_1['AND (SELECT substring(columna_1 , 1 ,1) FROM nombre_de_la_tabla where columna_1 ='administrator')='a -- -] ")
+        print(" Form #2: Usar la función substring() pero para verificar la segunda letra--> COOKIE: cookie_de_la_pagina_1['AND (SELECT substring(columna_1 , 2 ,1) FROM nombre_de_la_tabla where columna_1 ='administrator')='a -- -] ")
+        print("     result #1: Si sigue apareciendo el elemento clave, es por que si existe un usuario llamado administrator")
         print("--------------------------------------------------------------------------")
         print("EXPLICACIÓN POR PARTES:")
         print("[']: Para hacer un hueco.")
         print("[1=1]: Se busca un TRUE por lo cual logicamente 1 es igual a 1.")
         print("[--]: Para comentar las demás partes.")
+        print("[LIMIT #]: Me ayuda a limitar los registros de una consulta.")
+        print("[substring(1,1)]: Seleccionamos la primera letra del resultado de la consulta.")
         print("**********************************************************************************")
         
     else:#Sino tenemos más ataques
