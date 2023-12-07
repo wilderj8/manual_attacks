@@ -40,7 +40,8 @@ def content_sql_injection(numero_seleccion):#Contenido de sql injection
         print("Sanatizada: Código a la cuál se desarrollo para que no se hagan ataques sql injection")
         print("Dumpear: Extraer información.")
         print("bypass or bypassing: Es evitar la autenticación")
-        print("Cluster van: ")
+        print("Cluster van: Son tablas que estan en un mismo espacio, que se relacionan con una clave primaria. ")
+        print("Fusear: Combinar herramientas o tecnicas. ")
 
 
         print("**********************************************************************************")
@@ -279,6 +280,18 @@ def content_sql_injection(numero_seleccion):#Contenido de sql injection
         print(" Form #1: Usar la función substring() --> COOKIE: cookie_de_la_pagina_1['AND (SELECT substring(columna_1 , 1 ,1) FROM nombre_de_la_tabla where columna_1 ='administrator')='a -- -] ")
         print(" Form #2: Usar la función substring() pero para verificar la segunda letra--> COOKIE: cookie_de_la_pagina_1['AND (SELECT substring(columna_1 , 2 ,1) FROM nombre_de_la_tabla where columna_1 ='administrator')='a -- -] ")
         print("     result #1: Si sigue apareciendo el elemento clave, es por que si existe un usuario llamado administrator")
+        print(" Step #5.10: Nos dirigimos al burp suite en el apartado de request y nos vamos al intruder(Ctrl+i), nos dirigimos a la segunda pestaña, después a la pestaña positions.")
+        print(" Step #5.11: Seleccionamos el ataque Sniper, después damos clic en clear.")
+        print(" Step #5.12: Vamos a fusear el primer elemento, nos ubicamos en la parte [='a] y seleccionamos [a]]")
+        print(" Step #5.13: Después damos al botón de add")
+        print("     result #1: se nos agregara unas llaves[{"+"}]")
+        print(" Step #5.14: Nos dirigimos a la pestaña de payloads")
+        print(" Step #5.15: Creamos un diccionario con el textbox que hay y el botón de add")
+        print(" Step #5.16: Nos dirigimos a la pestaña proxy, después a payloads y damos clic en start attack")
+        print("     result #1: Nos fijaremos en la columna de lenght, ya que debemos analizar el tamaño, cuando hay un patrón que no se repita tanto, este puede ser el correcto en la posición.")
+        
+
+
         print("--------------------------------------------------------------------------")
         print("EXPLICACIÓN POR PARTES:")
         print("[']: Para hacer un hueco.")
