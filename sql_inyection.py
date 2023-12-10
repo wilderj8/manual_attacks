@@ -289,7 +289,15 @@ def content_sql_injection(numero_seleccion):#Contenido de sql injection
         print(" Step #5.15: Creamos un diccionario con el textbox que hay y el botón de add")
         print(" Step #5.16: Nos dirigimos a la pestaña proxy, después a payloads y damos clic en start attack")
         print("     result #1: Nos fijaremos en la columna de lenght, ya que debemos analizar el tamaño, cuando hay un patrón que no se repita tanto, este puede ser el correcto en la posición.")
-        
+        print("Step #6: Python:")
+        print(" Step #6.1: Instalar las siguientes librerias y herramientas:")
+        print("     [pip3 install pwntools]: Barras de progreso.")
+        print(" Step #6.2: Crear Script(Esta comentado uno por uno):")
+        print("     Step #6.2.1: Burp suite: ")
+        print("         Step #6.2.1.1: Encontrar la url principal nos vamos a: pestaña raw/host:[url principal(copiar)]")
+
+
+
 
 
         print("--------------------------------------------------------------------------")
