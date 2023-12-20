@@ -295,6 +295,13 @@ def content_sql_injection(numero_seleccion):#Contenido de sql injection
         print(" Step #6.2: Crear Script(Esta comentado uno por uno):")
         print("     Step #6.2.1: Burp suite: ")
         print("         Step #6.2.1.1: Encontrar la url principal nos vamos a: pestaña raw/host:[url principal(copiar)]")
+        print("         Step #6.2.1.2: Encontrar la longitud de la contraseña: \n \t\t COOKIE: cookie_de_la_pagina_1= << valores_random_1 >> \n \t\t ['and (SELECT 'a' \n \t\t FROM users \n \t\t WHERE username=' << administrator | valor_1  >>' and length(password)>= << numero_valor(int) >> ) ' << a | letra_valor(string) >> ; ] ")
+        print("             Remember #1: Intentamos enontrar el numero limite de la longitud de la contraseña, esto se hace teniendo en cuenta el elemento que se pierde y aparece. ")
+        print("         Step #6.2.1.3: vamos a copiar la cookie completa donde está el burp suite: \n \t\t (desde) Cookie_1= << valor_random_1 >> \n \t\t [' AND (SELECT substring(password,1,1)  \n \t\t FORM users \n \t\t WHERE username= ' << administrador | valor_string >> ' )= ' << valor_letra | a(string) >> ; \n  \t\t Cookie_2= << valor_random_2 >>(hasta)] ")
+        print("         Step #6.2.1.4: vamos a a separar las cookies para que no queden tan juntas, solo es darle espacio despues de la coma ['<*valor_letra*>''],")
+        
+
+
 
 
 
@@ -307,6 +314,8 @@ def content_sql_injection(numero_seleccion):#Contenido de sql injection
         print("[--]: Para comentar las demás partes.")
         print("[LIMIT #]: Me ayuda a limitar los registros de una consulta.")
         print("[substring(1,1)]: Seleccionamos la primera letra del resultado de la consulta.")
+        print("[''valor'']: Cuando pongo '' es porque se refiere a comillas dobles("").")
+        print("[<<valor>>]: Es un valor que nosotros ponemos según la situación.")
         print("**********************************************************************************")
         
     else:#Sino tenemos más ataques
