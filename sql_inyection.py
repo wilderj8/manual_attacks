@@ -303,15 +303,7 @@ def content_sql_injection(numero_seleccion):#Contenido de sql injection
         print("         Step #6.2.1.1: Encontrar la url principal nos vamos a: pestaña raw/host:[url principal(copiar)]")
         print("         Step #6.2.1.2: Encontrar la longitud de la contraseña: \n \t\t COOKIE: cookie_de_la_pagina_1= VALORES_RANDOM_1 \n \t\t ['and (SELECT ' << a | Letra >>' \n \t\t FROM << users | nombre_de_la_tabla >> \n \t\t WHERE << username | Column_name >> =' << administrator | valor_1  >>' and length( << Column_password | Column_name >> )>= << numero_valor(int) >> ) ' << a | letra_valor(string) >> ; ] ")
         print("             Remember #1: Intentamos enontrar el numero limite de la longitud de la contraseña, esto se hace teniendo en cuenta el elemento que se pierde y aparece. ")
-        print("         Step #6.2.1.3: vamos a copiar la cookie completa donde está el burp suite: \n \t\t (desde) Cookie_1= VALOR_RANDOM_1 \n \t\t [' AND (SELECT substring( << Column_password >> ,1,1)  \n \t\t FORM << Table_users | Table_name >> \n \t\t WHERE << Column_username | Column_name >>= ' << administrador | valor_string >> ' )= ' << valor_letra | a(string) >> ; \n  \t\t Cookie_2= VALOR_RANDOM_2(hasta)] ")
-        print("         Step #6.2.1.4: vamos a a separar las cookies para que no queden tan juntas, solo es darle espacio despues de la coma ['<< valor_letra >>''],")
-        
-
-
-
-
-
-
+        print("         Step #6.2.1.3: Modificar script a beneficio, se recomienda hacerle una copia y trabajar con la copia.")
 
         print("--------------------------------------------------------------------------")
         print("EXPLICACIÓN POR PARTES:")
