@@ -78,6 +78,8 @@ def crear_petición():
                 barra_progreso_contrasena.status(contrasena)
                 break
 
+
+
 #Funcion principal        
 if __name__=='__main__':
     crear_petición()
