@@ -1,1 +1,1 @@
-sql_inyection,10
+sql_inyection,5
